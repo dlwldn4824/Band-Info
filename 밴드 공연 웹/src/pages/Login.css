@@ -3,18 +3,36 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 1rem;
+  background-image: url('../assets/배경/light_forest.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  z-index: 0;
 }
 
 .login-container {
   background: white;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  padding: 2rem 1.5rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   animation: fadeInUp 0.5s ease-out;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes fadeInUp {
@@ -30,27 +48,28 @@
 
 .login-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .login-header h1 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-bottom: 0.5rem;
   color: #333;
 }
 
 .login-header p {
   color: #666;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1.25rem;
 }
 
 .form-group {
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -63,11 +82,13 @@
 }
 
 .form-group input {
-  padding: 0.875rem;
+  padding: 1rem;
   border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
+  border-radius: 10px;
+  font-size: 16px;
   transition: border-color 0.3s;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 .form-group input:focus {
@@ -79,39 +100,68 @@
   background-color: #fee;
   color: #c33;
   padding: 0.75rem;
-  border-radius: 8px;
+  border-radius: 15px;
   font-size: 0.9rem;
   text-align: center;
   border: 1px solid #fcc;
 }
 
 .login-button {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  padding: 1rem;
-  border-radius: 8px;
-  font-size: 1.1rem;
+  background: #FFF0B8;
+  color: #333;
+  padding: 1.125rem;
+  border-radius: 15px;
+  font-size: 1rem;
   font-weight: 600;
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
   margin-top: 0.5rem;
+  border: none;
+  cursor: pointer;
+  min-height: 48px;
+  touch-action: manipulation;
 }
 
 .login-button:hover {
+  background: #fff38b;
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
 }
 
 .login-button:active {
   transform: translateY(0);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .login-page {
+    padding: 2rem;
+  }
+
   .login-container {
-    padding: 2rem 1.5rem;
+    padding: 3rem;
+    max-width: 400px;
+    border-radius: 30px;
   }
 
   .login-header h1 {
-    font-size: 1.75rem;
+    font-size: 2rem;
+  }
+
+  .login-header p {
+    font-size: 0.95rem;
+  }
+
+  .login-form {
+    gap: 1.5rem;
+  }
+
+  .form-group input {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+
+  .login-button {
+    padding: 1rem;
+    font-size: 1.1rem;
   }
 }
 

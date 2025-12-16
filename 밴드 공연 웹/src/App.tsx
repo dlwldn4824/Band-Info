@@ -9,6 +9,7 @@ import Dashboard from './pages/Dashboard'
 import Performances from './pages/Performances'
 import Events from './pages/Events'
 import Chat from './pages/Chat'
+import Guestbook from './pages/Guestbook'
 
 function App() {
   return (
@@ -52,6 +53,14 @@ function App() {
                   <ProtectedRoute>
                     <Chat />
                   </ProtectedRoute>
+                </Layout>
+              }
+            />
+            <Route
+              path="/guestbook"
+              element={
+                <Layout>
+                  <Guestbook />
                 </Layout>
               }
             />

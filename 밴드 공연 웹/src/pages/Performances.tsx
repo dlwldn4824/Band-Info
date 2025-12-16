@@ -19,7 +19,10 @@ const Performances = () => {
 
         {performanceData?.performers && performanceData.performers.length > 0 && (
           <section className="performances-section">
-            <Performers performers={performanceData.performers} />
+            <Performers 
+              performers={performanceData.performers} 
+              setlist={performanceData.setlist || []}
+            />
           </section>
         )}
 

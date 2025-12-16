@@ -31,7 +31,7 @@ const Login = () => {
     <div className="login-page">
       <div className="login-container">
         <div className="login-header">
-          <h1>🎵 체크인</h1>
+          <h1>체크인</h1>
           <p>이름과 전화번호를 입력해주세요</p>
         </div>
         
@@ -63,7 +63,7 @@ const Login = () => {
           {error && <div className="error-message">{error}</div>}
 
           <button type="submit" className="login-button">
-            로그인
+            공연 입장하기
           </button>
         </form>
       </div>

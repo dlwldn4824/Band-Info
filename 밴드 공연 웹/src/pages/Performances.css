@@ -1,21 +1,48 @@
 .performances-page {
   animation: fadeIn 0.5s ease-in;
+  min-height: 100vh;
+  background-image: url('../assets/배경/light_forest.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.performances-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  z-index: 0;
 }
 
 .performances-page h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
   color: #333;
+  position: relative;
+  z-index: 1;
+  text-align: center;
 }
 
 .performances-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
 }
 
 .performances-section {
   animation: fadeInUp 0.5s ease-out;
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes fadeIn {
@@ -40,20 +67,36 @@
 
 .empty-state {
   background: white;
-  padding: 3rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   text-align: center;
   color: #999;
+  position: relative;
+  z-index: 1;
 }
 
 .empty-state p {
   margin-bottom: 0.5rem;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
+  .performances-page {
+    padding: 2rem 0;
+  }
+
   .performances-page h1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .performances-content {
+    gap: 2rem;
+  }
+
+  .empty-state {
+    padding: 3rem;
+    border-radius: 12px;
   }
 }
 

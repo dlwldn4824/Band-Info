@@ -1,0 +1,334 @@
+.guestbook-page {
+  animation: fadeIn 0.5s ease-in;
+  min-height: 100vh;
+  background-image: url('../assets/배경/light_forest.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
+  padding: 1rem 0;
+}
+
+.guestbook-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(2px);
+  z-index: 0;
+}
+
+.guestbook-page h1 {
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+  color: #333;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.guestbook-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.tree-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.tree {
+  position: relative;
+  width: 200px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.tree-top {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: -0.5rem;
+}
+
+.tree-middle {
+  font-size: 4rem;
+  line-height: 1;
+  margin-bottom: -0.5rem;
+}
+
+.tree-bottom {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.tree-trunk {
+  width: 30px;
+  height: 40px;
+  background: #8B4513;
+  border-radius: 4px;
+}
+
+.ornament {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  z-index: 10;
+}
+
+.ornament:hover {
+  transform: scale(1.2);
+  z-index: 20;
+}
+
+.ornament-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.ornament-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 0.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 0.75rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 150px;
+  max-width: 200px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.ornament:hover .ornament-tooltip {
+  opacity: 1;
+}
+
+.tooltip-name {
+  font-weight: 600;
+  color: #333;
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.tooltip-message {
+  color: #666;
+  font-size: 0.8125rem;
+  word-break: break-word;
+}
+
+.guestbook-form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.add-message-button {
+  width: 100%;
+  padding: 1.125rem;
+  background: #FFF0B8;
+  color: #333;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+.add-message-button:hover {
+  background: #fff38b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.guestbook-form {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.guestbook-form h3 {
+  margin: 0 0 1.25rem 0;
+  font-size: 1.25rem;
+  color: #333;
+  text-align: center;
+}
+
+.guestbook-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.guestbook-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: #333;
+  font-size: 0.9rem;
+}
+
+.guestbook-form input,
+.guestbook-form textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.3s;
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+}
+
+.guestbook-form input:focus,
+.guestbook-form textarea:focus {
+  border-color: #667eea;
+  outline: none;
+}
+
+.guestbook-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-buttons {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.submit-button {
+  flex: 1;
+  padding: 1rem;
+  background: #FFF0B8;
+  color: #333;
+  border: none;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+.submit-button:hover {
+  background: #fff38b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+}
+
+.cancel-button {
+  flex: 1;
+  padding: 1rem;
+  background: rgba(245, 245, 245, 0.9);
+  color: #333;
+  border: 1px solid rgba(232, 232, 232, 0.5);
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-height: 48px;
+  touch-action: manipulation;
+}
+
+.cancel-button:hover {
+  background: rgba(235, 235, 235, 0.9);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) {
+  .guestbook-page {
+    padding: 2rem 0;
+  }
+
+  .guestbook-page h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .guestbook-container {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  .tree-container {
+    max-width: 500px;
+    flex-shrink: 0;
+  }
+
+  .tree {
+    width: 250px;
+    height: 400px;
+  }
+
+  .tree-top {
+    font-size: 4rem;
+  }
+
+  .tree-middle {
+    font-size: 5rem;
+  }
+
+  .tree-bottom {
+    font-size: 6rem;
+  }
+
+  .guestbook-form-container {
+    flex: 1;
+    max-width: 400px;
+  }
+
+  .guestbook-form {
+    padding: 2rem;
+  }
+}
+

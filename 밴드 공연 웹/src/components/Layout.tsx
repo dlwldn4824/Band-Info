@@ -37,6 +37,9 @@ const Layout = ({ children }: LayoutProps) => {
             <Link to="/events" className={`nav-link ${isActive('/events')}`}>
               이벤트
             </Link>
+            <Link to="/guestbook" className={`nav-link ${isActive('/guestbook')}`}>
+              방명록
+            </Link>
             <Link to="/chat" className={`nav-link ${isActive('/chat')}`}>
               채팅
             </Link>
