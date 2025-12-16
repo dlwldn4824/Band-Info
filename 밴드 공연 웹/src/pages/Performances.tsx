@@ -1,8 +1,18 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useData, SetlistItem } from '../contexts/DataContext'
 import './Performances.css'
 
 const Performances = () => {
+  useEffect(() => {
+    // 마운트 시 스크롤 방지
+    document.body.style.overflow = 'hidden'
+    
+    // 언마운트 시 스크롤 복구
+    return () => {
+      document.body.style.overflow = 'auto'
+    }
+  }, [])
+
   const { performanceData } = useData()
   const [selectedSong, setSelectedSong] = useState<SetlistItem | null>(null)
 
