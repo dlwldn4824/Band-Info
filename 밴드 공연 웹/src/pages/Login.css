@@ -4,8 +4,10 @@
 }
 
 .login-page {
-  min-height: 100vh;
-  min-height: 100dvh;
+  height: 100dvh;
+  position: fixed;
+  inset: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,9 +16,9 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  position: relative;
   font-family: 'DNFBitBitv2', sans-serif;
   overflow: hidden;
+  overscroll-behavior: none;
 }
 
 @media (max-width: 768px) {
@@ -38,14 +40,15 @@
 }
 
 .login-container {
-  top: 50%;
+
   background: white;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
   padding: 1.5rem;
   width: 100%;
   max-width: 300px;
-  height: 300px;
+  min-height: 300px;
+  height: auto;
   animation: fadeInUp 0.5s ease-out;
   position: relative;
   z-index: 1;
@@ -156,7 +159,8 @@
   .login-container {
     padding: 1.5rem;
     max-width: 300px;
-    height: 300px;
+    min-height: 300px;
+    height: auto;
     border-radius: 30px;
   }
 
