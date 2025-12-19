@@ -1,14 +1,28 @@
+@font-face {
+  font-family: 'DNFBitBitv2';
+  src: url('/assets/%EB%B0%B0%EA%B2%BD/DNFBitBitv2.ttf') format('truetype');
+}
+
 .login-page {
   min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  background-image: url('../assets/배경/light_forest.png');
-  background-size: contain;
+  background-image: url('../assets/배경/밴드_밤_배경.png');
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  font-family: 'DNFBitBitv2', sans-serif;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .login-page {
+    background-position: center top;
+  }
 }
 
 .login-page::before {
@@ -24,12 +38,14 @@
 }
 
 .login-container {
+  top: 50%;
   background: white;
   border-radius: 20px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-  padding: 2rem 1.5rem;
+  padding: 1.5rem;
   width: 100%;
-  max-width: 100%;
+  max-width: 300px;
+  height: 300px;
   animation: fadeInUp 0.5s ease-out;
   position: relative;
   z-index: 1;
@@ -40,6 +56,7 @@
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -48,12 +65,12 @@
 
 .login-header {
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .login-header h1 {
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  margin-bottom: 0.25rem;
   color: #333;
 }
 
@@ -65,14 +82,14 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 0.5rem;
 }
 
 .form-group {
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 
 .form-group label {
@@ -82,10 +99,10 @@
 }
 
 .form-group input {
-  padding: 1rem;
+  padding: 0.5rem;
   border: 2px solid #e0e0e0;
-  border-radius: 10px;
-  font-size: 16px;
+  border-radius: 8px;
+  font-size: 14px;
   transition: border-color 0.3s;
   -webkit-appearance: none;
   appearance: none;
@@ -109,15 +126,15 @@
 .login-button {
   background: #FFF0B8;
   color: #333;
-  padding: 1.125rem;
-  border-radius: 15px;
-  font-size: 1rem;
+  padding: 0.6rem;
+  border-radius: 10px;
+  font-size: 0.95rem;
   font-weight: 600;
   transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
-  margin-top: 0.5rem;
+  margin-top: 0.25rem;
   border: none;
   cursor: pointer;
-  min-height: 48px;
+  min-height: 36px;
   touch-action: manipulation;
 }
 
@@ -137,31 +154,31 @@
   }
 
   .login-container {
-    padding: 3rem;
-    max-width: 400px;
+    padding: 1.5rem;
+    max-width: 300px;
+    height: 300px;
     border-radius: 30px;
   }
 
   .login-header h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
 
   .login-header p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
 
   .login-form {
-    gap: 1.5rem;
+    gap: 0.75rem;
   }
 
   .form-group input {
-    padding: 0.875rem;
-    font-size: 1rem;
+    padding: 0.5rem;
+    font-size: 14px;
   }
 
   .login-button {
-    padding: 1rem;
-    font-size: 1.1rem;
+    padding: 0.6rem;
+    font-size: 1rem;
   }
 }
-
